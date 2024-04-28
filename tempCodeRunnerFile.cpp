@@ -38,7 +38,6 @@ void insertionSort(int arr[], int size)
     {
         int temp = arr[i];
         int j=i-1;
-
         for(; j>= 0; j--)
         {
             if(arr[j]>temp)
@@ -46,27 +45,22 @@ void insertionSort(int arr[], int size)
                 // shift
                 arr[j+1]= arr[j];
             }
-
             else
             {
                 break;
-            }           
+            }
+            arr[j+1]= temp;
         }
-
-        arr[j+1]= temp;
     }
 }
+int main(){
 
-int main()
-{
     int arr[]={10,1,7,4,8,2,11};
-
     int p=sizeof(arr)/sizeof(arr[0]);
 
     insertionSort(arr, p);
 
-    for(int i=0;i<p;i++)
-    {
+    for(int i=0;i<p;i++){
         cout<<arr[i]<<" ";;
     }
 

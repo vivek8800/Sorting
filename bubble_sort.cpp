@@ -49,15 +49,18 @@ void bubbleSort(int arr[], int n)
         }
     }
 }
+
 int main()
 {
 
-    int arr[]={3,4,56,7,2,9,8};
-    int p=sizeof(arr)/sizeof(arr[0]);
+    int arr[]={3,4,56,7,0,2,9,8};
 
-    bubbleSort(arr, p);
+    int n=sizeof(arr)/sizeof(arr[0]);
 
-    for(int i=0;i<p;i++){
+    bubbleSort(arr, n);
+
+    for(int i=0;i<n;i++)
+    {
         cout<<arr[i]<<" ";
     }
 

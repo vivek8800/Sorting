@@ -1,3 +1,7 @@
+/******************************************************************************
+Selection Sort
+*******************************************************************************/
+
 /*
     Round 1:    64, 25, 12, 22, 11       //  swap 64 and 11
                 i
@@ -27,33 +31,36 @@ using namespace std;
 
 void selectionSort(int arr[], int size)
 {
-    
-        for(int i=0;i<size-2;i++)
-        {      // loop is up to n-1 because last element will bw already sorted
-            int minIndex=i;
-
-            for(int j=i+1;j<size;j++)
+    // loop is up to n-1 because last element will bw already sorted
+    for(int i=0;i<size-2;i++)
+    {   
+        int minIndex=i;
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[j]<arr[minIndex])
             {
-                if(arr[j]<arr[minIndex])
-                {
-                    minIndex=j;
-                }
+                minIndex=j;
             }
-            swap(arr[minIndex], arr[i]);                      
         }
         
-        cout<<"Array after sorting"<<endl;
-                for(int i=0;i<size;i++)
-                {
-                cout<<arr[i]<<" ";
-                }
+        swap(arr[minIndex], arr[i]);
+    }
 }
 
 int main()
 {
     int arr[]={64, 25, 12, 22,11};
+    
     int p=sizeof(arr)/sizeof(arr[0]);
     
     selectionSort(arr,p);
+    
+    cout<<"Array after sorting"<<endl;
+    
+    for(int i=0;i<p;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    
     return 0;
-} 
+}
